@@ -9,13 +9,13 @@
 </template>
 
 <script setup lang="ts">
-const client = useSupabaseClient();
-const router = useRouter();
+const client = useSupabaseClient()
+const router = useRouter()
 const logout = async () => {
-  const { error } = await client.auth.signOut();
+  const { error } = await client.auth.signOut()
   if (error) {
-    return alert("Something went wrong !");
+    return alert('Something went wrong !')
   }
-  router.push("/login");
-};
+  router.push('/login')
+}
 </script>

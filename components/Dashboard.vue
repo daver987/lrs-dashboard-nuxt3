@@ -210,6 +210,7 @@
                       v-slot="{ active }"
                     >
                       <a
+                        @click="logout"
                         :href="item.href"
                         :class="[
                           active ? 'bg-gray-100' : '',
@@ -285,10 +286,10 @@ import { SearchIcon } from '@heroicons/vue/solid'
 
 const sidebarNavigation = [
   { name: 'Home', href: '#', icon: HomeIcon, current: false },
-  { name: 'All Files', href: '#', icon: ViewGridIcon, current: false },
-  { name: 'Photos', href: '#', icon: PhotographIcon, current: true },
-  { name: 'Shared', href: '#', icon: UserGroupIcon, current: false },
-  { name: 'Albums', href: '#', icon: CollectionIcon, current: false },
+  { name: 'Quotes', href: '#', icon: ViewGridIcon, current: false },
+  { name: 'Bookings', href: '#', icon: PhotographIcon, current: true },
+  { name: 'Invoicing', href: '#', icon: UserGroupIcon, current: false },
+  { name: 'Resources', href: '#', icon: CollectionIcon, current: false },
   { name: 'Settings', href: '#', icon: CogIcon, current: false },
 ]
 const userNavigation = [
@@ -297,4 +298,14 @@ const userNavigation = [
 ]
 
 const mobileMenuOpen = ref(false)
+
+const client = useSupabaseClient()
+const router = useRouter()
+const logout = async () => {
+  const { error } = await client.auth.signOut()
+  if (error) {
+    return alert('Something went wrong !')
+  }
+  router.push('/login')
+}
 </script>

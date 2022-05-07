@@ -1,0 +1,15 @@
+name = "lrs-dashboard"
+type = "javascript"
+account_id = "9daf554a647e8485085e1bfe6244c8a3"
+workers_dev = true
+route = ""
+zone_id = ""
+compatibility_date = "2022-04-07"
+
+[site]
+bucket = ".output/public"
+entry-point = ".output"
+
+[build]
+command = ""
+upload.format = "service-worker"
