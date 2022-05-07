@@ -1,7 +1,7 @@
 <template>
   <div class="h-full flex">
     <!-- Narrow sidebar -->
-    <div class="hidden w-24 bg-primary overflow-y-auto md:block">
+    <div class="hidden w-24 bg-black/90 overflow-y-auto md:block">
       <div class="w-full py-6 flex flex-col items-center">
         <div class="flex-shrink-0 flex items-center">
           <img
@@ -11,10 +11,10 @@
           />
         </div>
         <div class="flex-1 mt-6 w-full px-2 space-y-1">
-          <a
+          <NuxtLink
             v-for="item in sidebarNavigation"
             :key="item.name"
-            :href="item.href"
+            :to="item.to"
             :class="[
               item.current
                 ? 'bg-primary text-white'
@@ -34,7 +34,7 @@
               aria-hidden="true"
             />
             <span class="mt-2">{{ item.name }}</span>
-          </a>
+          </NuxtLink>
         </div>
       </div>
     </div>
@@ -101,10 +101,10 @@
               <div class="mt-5 flex-1 h-0 px-2 overflow-y-auto">
                 <nav class="h-full flex flex-col">
                   <div class="space-y-1">
-                    <a
+                    <NuxtLink
                       v-for="item in sidebarNavigation"
                       :key="item.name"
-                      :href="item.href"
+                      :to="item.to"
                       :class="[
                         item.current
                           ? 'bg-primary text-white'
@@ -124,7 +124,7 @@
                         aria-hidden="true"
                       />
                       <span>{{ item.name }}</span>
-                    </a>
+                    </NuxtLink>
                   </div>
                 </nav>
               </div>
@@ -209,14 +209,14 @@
                       :key="item.name"
                       v-slot="{ active }"
                     >
-                      <a
+                      <NuxtLink
                         @click="logout"
-                        :href="item.href"
+                        :to="item.to"
                         :class="[
                           active ? 'bg-gray-100' : '',
                           'block px-4 py-2 text-sm text-gray-700',
                         ]"
-                        >{{ item.name }}</a
+                        >{{ item.name }}</NuxtLink
                       >
                     </MenuItem>
                   </MenuItems>
@@ -259,8 +259,7 @@
   </div>
 </template>
 
-<script setup>
-import { ref } from 'vue'
+<script setup lang="ts">
 import {
   Dialog,
   DialogPanel,
@@ -283,18 +282,12 @@ import {
   XIcon,
 } from '@heroicons/vue/outline'
 import { SearchIcon } from '@heroicons/vue/solid'
+const { data } = await useFetch('/api/navigation')
+const sidebarNavigation = data
 
-const sidebarNavigation = [
-  { name: 'Home', href: '#', icon: HomeIcon, current: false },
-  { name: 'Quotes', href: '#', icon: ViewGridIcon, current: false },
-  { name: 'Bookings', href: '#', icon: PhotographIcon, current: true },
-  { name: 'Invoicing', href: '#', icon: UserGroupIcon, current: false },
-  { name: 'Resources', href: '#', icon: CollectionIcon, current: false },
-  { name: 'Settings', href: '#', icon: CogIcon, current: false },
-]
 const userNavigation = [
-  { name: 'Your Profile', href: '#' },
-  { name: 'Sign out', href: '#' },
+  { name: 'Your Profile', to: '#' },
+  { name: 'Sign out', to: '#' },
 ]
 
 const mobileMenuOpen = ref(false)
