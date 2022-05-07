@@ -36,7 +36,7 @@ const options = ref({
   headers: {
     Accept: 'application/json',
     'Content-Type': 'application/json',
-    Authorization: 'Bearer gZ8synsZVHZJbXoQBei7SAQop5SJrW3CmDK7JJnDa2uhIxF3',
+    Authorization: `Bearer ${useRuntimeConfig().apiSecret}`,
   },
   body: {
     to: [''],
