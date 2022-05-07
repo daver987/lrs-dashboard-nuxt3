@@ -13,7 +13,7 @@
     "preview": "nuxt preview"
   },
   "devDependencies": {
-    "@headlessui/vue": "^1.6.1",
+
     "@heroicons/vue": "^1.0.6",
     "@nuxt/test-utils-edge": "^3.0.0-rc.2-27530889.9e5a3cd",
     "@nuxtjs/supabase": "^0.1.11",
@@ -22,5 +22,8 @@
     "nuxt": "npm:nuxt3@latest",
     "prettier": "^2.6.2",
     "vitest": "^0.10.5"
+  },
+  "dependencies": {
+    "@headlessui/vue": "^1.6.1"
   }
 }
