@@ -87,7 +87,7 @@
                       class="h-12 w-12 rounded-full flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-white"
                       @click="mobileMenuOpen = false"
                     >
-                      <XIcon class="h-6 w-6 text-white" aria-hidden="true" />
+                      <IconsX />
                       <span class="sr-only">Close sidebar</span>
                     </button>
                   </div>
@@ -150,7 +150,7 @@
               @click="mobileMenuOpen = true"
             >
               <span class="sr-only">Open sidebar</span>
-              <MenuAlt2Icon class="h-6 w-6" aria-hidden="true" />
+              <IconsMenuAltTwo />
             </button>
             <div class="flex-1 flex justify-between px-4 sm:px-6">
               <div class="flex-1 flex">
@@ -164,7 +164,7 @@
                     <div
                       class="pointer-events-none absolute inset-y-0 left-0 flex items-center"
                     >
-                      <SearchIcon
+                      <IconsSearch
                         class="flex-shrink-0 h-5 w-5"
                         aria-hidden="true"
                       />
@@ -230,7 +230,7 @@
                   type="button"
                   class="flex bg-primary p-1 rounded-full items-center justify-center text-white hover:bg-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary/80"
                 >
-                  <PlusSmIcon class="h-6 w-6" aria-hidden="true" />
+                  <IconsPlusSm />
                   <span class="sr-only">Add file</span>
                 </button>
               </div>
@@ -280,14 +280,11 @@ import {
   CogIcon,
   CollectionIcon,
   HomeIcon,
-  MenuAlt2Icon,
   PhotographIcon,
-  PlusSmIcon,
   UserGroupIcon,
   ViewGridIcon,
-  XIcon,
 } from '@heroicons/vue/outline'
-import { SearchIcon } from '@heroicons/vue/solid'
+
 const { data } = await useFetch('/api/navigation')
 const sidebarNavigation = data
 
