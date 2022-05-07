@@ -1,7 +1,7 @@
 <template>
   <div class="h-full flex">
     <!-- Narrow sidebar -->
-    <div class="hidden w-28 bg-indigo-700 overflow-y-auto md:block">
+    <div class="hidden w-24 bg-primary overflow-y-auto md:block">
       <div class="w-full py-6 flex flex-col items-center">
         <div class="flex-shrink-0 flex items-center">
           <img
@@ -17,8 +17,8 @@
             :href="item.href"
             :class="[
               item.current
-                ? 'bg-indigo-800 text-white'
-                : 'text-indigo-100 hover:bg-indigo-800 hover:text-white',
+                ? 'bg-primary text-white'
+                : 'text-gray-100 hover:bg-primary hover:text-white',
               'group w-full p-3 rounded-md flex flex-col items-center text-xs font-medium',
             ]"
             :aria-current="item.current ? 'page' : undefined"
@@ -28,7 +28,7 @@
               :class="[
                 item.current
                   ? 'text-white'
-                  : 'text-indigo-300 group-hover:text-white',
+                  : 'text-gray-100 group-hover:text-white',
                 'h-6 w-6',
               ]"
               aria-hidden="true"
@@ -69,7 +69,7 @@
             leave-to="-translate-x-full"
           >
             <DialogPanel
-              class="relative max-w-xs w-full bg-indigo-700 pt-5 pb-4 flex-1 flex flex-col"
+              class="relative max-w-xs w-full bg-primary pt-5 pb-4 flex-1 flex flex-col"
             >
               <TransitionChild
                 as="template"
@@ -107,8 +107,8 @@
                       :href="item.href"
                       :class="[
                         item.current
-                          ? 'bg-indigo-800 text-white'
-                          : 'text-indigo-100 hover:bg-indigo-800 hover:text-white',
+                          ? 'bg-primary text-white'
+                          : 'text-gray-100 hover:bg-primary hover:text-white',
                         'group py-2 px-3 rounded-md flex items-center text-sm font-medium',
                       ]"
                       :aria-current="item.current ? 'page' : undefined"
@@ -118,7 +118,7 @@
                         :class="[
                           item.current
                             ? 'text-white'
-                            : 'text-indigo-300 group-hover:text-white',
+                            : 'text-primary/70 group-hover:text-white',
                           'mr-3 h-6 w-6',
                         ]"
                         aria-hidden="true"
@@ -145,7 +145,7 @@
         >
           <button
             type="button"
-            class="border-r border-gray-200 px-4 text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 md:hidden"
+            class="border-r border-gray-200 px-4 text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary/80 md:hidden"
             @click="mobileMenuOpen = true"
           >
             <span class="sr-only">Open sidebar</span>
@@ -183,7 +183,7 @@
               <Menu as="div" class="relative flex-shrink-0">
                 <div>
                   <MenuButton
-                    class="bg-white rounded-full flex text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    class="bg-white rounded-full flex text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary/80"
                   >
                     <span class="sr-only">Open user menu</span>
                     <img
@@ -224,7 +224,7 @@
 
               <button
                 type="button"
-                class="flex bg-indigo-600 p-1 rounded-full items-center justify-center text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                class="flex bg-primary p-1 rounded-full items-center justify-center text-white hover:bg-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary/80"
               >
                 <PlusSmIcon class="h-6 w-6" aria-hidden="true" />
                 <span class="sr-only">Add file</span>
