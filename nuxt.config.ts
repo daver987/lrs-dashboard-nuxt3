@@ -5,5 +5,5 @@ export default defineNuxtConfig({
   runtimeConfig: {
     apiSecret: '',
   },
-  modules: ['@nuxtjs/supabase', '@nuxtjs/tailwindcss'],
+  modules: ['@nuxtjs/supabase', '@nuxtjs/tailwindcss', 'unplugin-icons/nuxt'],
 })

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Quotes</h1>
+    <h1>Bookings</h1>
   </div>
 </template>
 
