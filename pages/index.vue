@@ -30,33 +30,33 @@
 </template>
 
 <script setup lang="ts">
-const selected = ref("");
+const selected = ref('')
 const options = ref({
-  method: "POST",
+  method: 'POST',
   headers: {
-    Accept: "application/json",
-    "Content-Type": "application/json",
-    Authorization: "Bearer gZ8synsZVHZJbXoQBei7SAQop5SJrW3CmDK7JJnDa2uhIxF3"
+    Accept: 'application/json',
+    'Content-Type': 'application/json',
+    Authorization: 'Bearer gZ8synsZVHZJbXoQBei7SAQop5SJrW3CmDK7JJnDa2uhIxF3',
   },
   body: {
-    to: [""],
-    from: "12896401876",
-    text: ""
-  }
-});
+    to: [''],
+    from: '12896401876',
+    text: '',
+  },
+})
 
 const sendMessage = async () => {
-  options.value.body.to = [selected.value];
+  options.value.body.to = [selected.value]
   return await $fetch(
-    "https://api.phone.com/v4/accounts/2664503/messages",
+    'https://api.phone.com/v4/accounts/2664503/messages',
     options.value
   )
     .then((response) => response)
     .then((response) => console.log(response))
-    .catch((err) => console.error(err));
-};
+    .catch((err) => console.error(err))
+}
 definePageMeta({
-  middleware: ["auth"]
-  // or middleware: 'auth'
-});
+  middleware: ['auth'],
+  layout: 'default',
+})
 </script>
