@@ -159,21 +159,21 @@
 </template>
 
 <script setup lang="ts">
-const email = ref("");
-const password = ref("");
-const user = useSupabaseUser();
-const client = useSupabaseClient();
-const router = useRouter();
+const email = ref('')
+const password = ref('')
+const user = useSupabaseUser()
+const client = useSupabaseClient()
+const router = useRouter()
 
 // Login method using email and password
 const login = async () => {
   const { user, error } = await client.auth.signIn({
     email: email.value,
-    password: password.value
-  });
+    password: password.value,
+  })
   if (error) {
-    return alert("Something went wrong !");
+    return alert('Something went wrong !')
   }
-  router.push("/dashboard");
-};
+  router.push('/')
+}
 </script>
