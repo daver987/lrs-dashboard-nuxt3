@@ -8,12 +8,7 @@
         @keyup.enter="sendMessage"
         class="p-1 border border-black"
       />
-      <button
-        class="px-4 py-2 bg-blue-500 text-white rounded-md"
-        @click="sendMessage"
-      >
-        Send
-      </button>
+      <BaseButton @click="sendMessage" label="send" />
       <p>{{ options.body.text }}</p>
       <div class="space-y-4">
         <label for="contacts">Send Message to: </label>
