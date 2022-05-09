@@ -1,6 +1,7 @@
 <template>
-  <div>
+  <div class="h-full">
     <h1>Quotes</h1>
+    <GoogleAutocomplete />
   </div>
 </template>
 
