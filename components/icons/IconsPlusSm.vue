@@ -1,6 +1,6 @@
 <template>
   <svg
-    class="h-6 w-6"
+    class="w-6 h-6"
     aria-hidden="true"
     width="1em"
     height="1em"
@@ -17,8 +17,6 @@
   </svg>
 </template>
 
-<script>
-export default {
-  name: 'IconsPlusSm',
-}
+<script setup lang="ts">
+//scripts
 </script>
