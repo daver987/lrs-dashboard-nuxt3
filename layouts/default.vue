@@ -1,17 +1,17 @@
 <template>
   <div class="h-screen">
-    <div class="h-full flex">
+    <div class="flex h-full">
       <!-- Narrow sidebar -->
-      <div class="hidden w-24 bg-black/90 overflow-y-auto md:block">
-        <div class="w-full py-6 flex flex-col items-center">
-          <div class="flex-shrink-0 flex items-center">
+      <div class="hidden w-24 overflow-y-auto bg-black/90 md:block">
+        <div class="flex flex-col items-center w-full py-6">
+          <div class="flex items-center flex-shrink-0">
             <img
-              class="h-8 w-auto"
+              class="w-auto h-8"
               src="https://tailwindui.com/img/logos/workflow-mark.svg?color=white"
               alt="Workflow"
             />
           </div>
-          <div class="flex-1 mt-6 w-full px-2 space-y-1">
+          <div class="flex-1 w-full px-2 mt-6 space-y-1">
             <NuxtLink
               v-for="item in sidebarNavigation"
               :key="item.name"
@@ -70,7 +70,7 @@
               leave-to="-translate-x-full"
             >
               <DialogPanel
-                class="relative max-w-xs w-full bg-primary pt-5 pb-4 flex-1 flex flex-col"
+                class="relative flex flex-col flex-1 w-full max-w-xs pt-5 pb-4 bg-primary"
               >
                 <TransitionChild
                   as="template"
@@ -81,10 +81,10 @@
                   leave-from="opacity-100"
                   leave-to="opacity-0"
                 >
-                  <div class="absolute top-1 right-0 -mr-14 p-1">
+                  <div class="absolute right-0 p-1 top-1 -mr-14">
                     <button
                       type="button"
-                      class="h-12 w-12 rounded-full flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-white"
+                      class="flex items-center justify-center w-12 h-12 rounded-full focus:outline-none focus:ring-2 focus:ring-white"
                       @click="mobileMenuOpen = false"
                     >
                       <IconsX />
@@ -92,15 +92,15 @@
                     </button>
                   </div>
                 </TransitionChild>
-                <div class="flex-shrink-0 px-4 flex items-center">
+                <div class="flex items-center flex-shrink-0 px-4">
                   <img
-                    class="h-8 w-auto"
+                    class="w-auto h-8"
                     src="https://tailwindui.com/img/logos/workflow-mark.svg?color=white"
                     alt="Workflow"
                   />
                 </div>
-                <div class="mt-5 flex-1 h-0 px-2 overflow-y-auto">
-                  <nav class="h-full flex flex-col">
+                <div class="flex-1 h-0 px-2 mt-5 overflow-y-auto">
+                  <nav class="flex flex-col h-full">
                     <div class="space-y-1">
                       <NuxtLink
                         v-for="item in sidebarNavigation"
@@ -139,22 +139,22 @@
       </TransitionRoot>
 
       <!-- Content area -->
-      <div class="flex-1 flex flex-col overflow-hidden">
+      <div class="flex flex-col flex-1 overflow-hidden">
         <header class="w-full">
           <div
-            class="relative z-10 flex-shrink-0 h-16 bg-white border-b border-gray-200 shadow-sm flex"
+            class="relative z-10 flex flex-shrink-0 h-16 bg-white border-b border-gray-200 shadow-sm"
           >
             <button
               type="button"
-              class="border-r border-gray-200 px-4 text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary/80 md:hidden"
+              class="px-4 text-gray-500 border-r border-gray-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary/80 md:hidden"
               @click="mobileMenuOpen = true"
             >
               <span class="sr-only">Open sidebar</span>
               <IconsMenuAltTwo />
             </button>
-            <div class="flex-1 flex justify-between px-4 sm:px-6">
-              <div class="flex-1 flex">
-                <form class="w-full flex md:ml-0" action="#" method="GET">
+            <div class="flex justify-between flex-1 px-4 sm:px-6">
+              <div class="flex flex-1">
+                <form class="flex w-full md:ml-0" action="#" method="GET">
                   <label for="search-field" class="sr-only"
                     >Search all files</label
                   >
@@ -162,17 +162,17 @@
                     class="relative w-full text-gray-400 focus-within:text-gray-600"
                   >
                     <div
-                      class="pointer-events-none absolute inset-y-0 left-0 flex items-center"
+                      class="absolute inset-y-0 left-0 flex items-center pointer-events-none"
                     >
                       <IconsSearch
-                        class="flex-shrink-0 h-5 w-5"
+                        class="flex-shrink-0 w-5 h-5"
                         aria-hidden="true"
                       />
                     </div>
                     <input
                       name="search-field"
                       id="search-field"
-                      class="h-full w-full border-transparent py-2 pl-8 pr-3 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-0 focus:border-transparent focus:placeholder-gray-400"
+                      class="w-full h-full py-2 pl-8 pr-3 text-base text-gray-900 placeholder-gray-500 border-transparent focus:outline-none focus:ring-0 focus:border-transparent focus:placeholder-gray-400"
                       placeholder="Search"
                       type="search"
                     />
@@ -180,32 +180,32 @@
                 </form>
               </div>
               <div
-                class="ml-2 flex items-center space-x-4 sm:ml-6 sm:space-x-6"
+                class="flex items-center ml-2 space-x-4 sm:ml-6 sm:space-x-6"
               >
                 <!-- Profile dropdown -->
                 <Menu as="div" class="relative flex-shrink-0">
                   <div>
                     <MenuButton
-                      class="bg-white rounded-full flex text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary/80"
+                      class="flex text-sm bg-white rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary/80"
                     >
                       <span class="sr-only">Open user menu</span>
                       <img
-                        class="h-8 w-8 rounded-full"
+                        class="w-8 h-8 rounded-full"
                         src="https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80"
                         alt=""
                       />
                     </MenuButton>
                   </div>
                   <transition
-                    enter-active-class="transition ease-out duration-100"
-                    enter-from-class="transform opacity-0 scale-95"
-                    enter-to-class="transform opacity-100 scale-100"
-                    leave-active-class="transition ease-in duration-75"
-                    leave-from-class="transform opacity-100 scale-100"
-                    leave-to-class="transform opacity-0 scale-95"
+                    enter-active-class="transition duration-100 ease-out"
+                    enter-from-class="transform scale-95 opacity-0"
+                    enter-to-class="transform scale-100 opacity-100"
+                    leave-active-class="transition duration-75 ease-in"
+                    leave-from-class="transform scale-100 opacity-100"
+                    leave-to-class="transform scale-95 opacity-0"
                   >
                     <MenuItems
-                      class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                      class="absolute right-0 w-48 py-1 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
                     >
                       <MenuItem
                         v-for="item in userNavigation"
@@ -219,8 +219,8 @@
                             active ? 'bg-gray-100' : '',
                             'block px-4 py-2 text-sm text-gray-700',
                           ]"
-                          >{{ item.name }}</NuxtLink
-                        >
+                          >{{ item.name }}
+                        </NuxtLink>
                       </MenuItem>
                     </MenuItems>
                   </transition>
@@ -228,7 +228,7 @@
 
                 <button
                   type="button"
-                  class="flex bg-primary p-1 rounded-full items-center justify-center text-white hover:bg-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary/80"
+                  class="flex items-center justify-center p-1 text-white rounded-full bg-primary hover:bg-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary/80"
                 >
                   <IconsPlusSm />
                   <span class="sr-only">Add file</span>
@@ -239,12 +239,12 @@
         </header>
 
         <!-- Main content -->
-        <div class="flex-1 flex items-stretch overflow-hidden">
-          <main class="flex-1 overflow-y-auto">
+        <div class="flex items-stretch flex-1 overflow-hidden">
+          <main class="flex-1 p-4 overflow-y-auto">
             <!-- Primary column -->
             <section
               aria-labelledby="primary-heading"
-              class="min-w-0 flex-1 h-full flex flex-col lg:order-last"
+              class="flex flex-col flex-1 h-full min-w-0 lg:order-last"
             >
               <h1 id="primary-heading" class="sr-only">Photos</h1>
               <!-- Your content -->
@@ -254,7 +254,7 @@
 
           <!-- Secondary column (hidden on smaller screens) -->
           <aside
-            class="hidden w-96 bg-white border-l border-gray-200 overflow-y-auto lg:block"
+            class="hidden overflow-y-auto bg-white border-l border-gray-200 w-96 lg:block"
           >
             <slot name="sidebar" />
             <!-- Your content -->
@@ -276,17 +276,32 @@ import {
   TransitionChild,
   TransitionRoot,
 } from '@headlessui/vue'
-import {
-  CogIcon,
-  CollectionIcon,
-  HomeIcon,
-  PhotographIcon,
-  UserGroupIcon,
-  ViewGridIcon,
-} from '@heroicons/vue/outline'
 
-const { data } = await useFetch('/api/navigation')
-const sidebarNavigation = data
+const IconsCog = resolveComponent('IconsCog')
+const IconsCollection = resolveComponent('IconsCollection')
+const IconsHome = resolveComponent('IconsHome')
+const IconsUserGroup = resolveComponent('IconsUserGroup')
+const IconsViewGrid = resolveComponent('IconsViewGrid')
+const IconsPhotograph = resolveComponent('IconsPhotograph')
+
+const sidebarNavigation = [
+  { name: 'Home', to: '/', icon: IconsHome, current: true },
+  { name: 'Quotes', to: '/quotes', icon: IconsViewGrid, current: false },
+  { name: 'Bookings', to: '/bookings', icon: IconsPhotograph, current: false },
+  {
+    name: 'Messaging',
+    to: '/messaging',
+    icon: IconsUserGroup,
+    current: false,
+  },
+  {
+    name: 'Resources',
+    to: '/resources',
+    icon: IconsCollection,
+    current: false,
+  },
+  { name: 'Settings', to: '/settings', icon: IconsCog, current: false },
+]
 
 const userNavigation = [
   { name: 'Your Profile', to: '#' },

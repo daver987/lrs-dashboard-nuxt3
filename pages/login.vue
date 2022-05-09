@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { onMounted } from 'vue'
-
 useHead({
   script: [
     {
@@ -12,7 +10,6 @@ definePageMeta({
   layout: 'auth',
 })
 onMounted(() => {
-  // noinspection TypeScriptUnresolvedFunction
   particlesJS('particles-js', {
     particles: {
       number: {

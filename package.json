@@ -13,16 +13,19 @@
     "preview": "nuxt preview"
   },
   "devDependencies": {
+    "@googlemaps/google-maps-services-js": "^3.3.13",
+    "@googlemaps/js-api-loader": "^1.14.1",
     "@heroicons/vue": "^1.0.6",
     "@iconify/json": "^2.1.38",
     "@nuxt/test-utils-edge": "^3.0.0-rc.2-27530889.9e5a3cd",
     "@nuxtjs/supabase": "^0.1.11",
     "@nuxtjs/tailwindcss": "^5.0.4",
     "@tailwindcss/forms": "^0.5.1",
-    "nuxt": "npm:nuxt3@latest",
+    "@types/google.maps": "^3.48.7",
+    "nuxt": "^3.0.0-rc.2",
     "prettier": "^2.6.2",
     "unplugin-icons": "^0.14.3",
-    "vitest": "^0.10.5"
+    "vitest": "^0.11.0"
   },
   "dependencies": {
     "@headlessui/vue": "^1.6.1"
